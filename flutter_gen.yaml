@@ -1,0 +1,6 @@
+#flutter_gen:
+#  output: lib/src/core/constant/assets/
+#  parse_metadata: true
+#  line_length: 80
+#  integrations:
+#    flutter_svg: true
