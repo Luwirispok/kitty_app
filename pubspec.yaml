@@ -27,7 +27,6 @@ dependencies:
 
   ### Images
   cached_network_image: ^3.4.1
-  flutter_cache_manager: ^3.4.1
   flutter_svg: ^2.0.17
 
   ### Text
@@ -63,9 +62,11 @@ dependencies:
   permission_handler: ^11.4.0
   clock: any
   path: any
+  flutter_cache_manager: ^3.4.1
+
+  ### Files
   path_provider: ^2.1.5
   flutter_file_dialog: ^3.0.2
-  # image_gallery_saver: ^2.0.3
   gallery_saver_plus: ^3.2.4
 
   ### Logging & Development
