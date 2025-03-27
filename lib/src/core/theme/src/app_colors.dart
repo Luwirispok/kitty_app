@@ -55,8 +55,7 @@ final class AppColors extends ThemeExtension<AppColors> {
       secondary: Color.lerp(secondary, other.secondary, t)!,
       primary: Color.lerp(primary, other.primary, t)!,
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
-      textSecondary:
-          Color.lerp(textSecondary, other.textSecondary, t)!,
+      textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
       textAccent: Color.lerp(textAccent, other.textAccent, t)!,
       textOnAccent: Color.lerp(textOnAccent, other.textOnAccent, t)!,
     );

@@ -116,18 +116,12 @@ class AppTypography extends ThemeExtension<AppTypography> {
     if (other is! AppTypography) return this;
 
     return AppTypography(
-      displayLarge:
-          TextStyle.lerp(displayLarge, other.displayLarge, t)!,
-      displayMedium:
-          TextStyle.lerp(displayMedium, other.displayMedium, t)!,
-      displaySmall:
-          TextStyle.lerp(displaySmall, other.displaySmall, t)!,
-      headlineLarge:
-          TextStyle.lerp(headlineLarge, other.headlineLarge, t)!,
-      headlineMedium:
-          TextStyle.lerp(headlineMedium, other.headlineMedium, t)!,
-      headlineSmall:
-          TextStyle.lerp(headlineSmall, other.headlineSmall, t)!,
+      displayLarge: TextStyle.lerp(displayLarge, other.displayLarge, t)!,
+      displayMedium: TextStyle.lerp(displayMedium, other.displayMedium, t)!,
+      displaySmall: TextStyle.lerp(displaySmall, other.displaySmall, t)!,
+      headlineLarge: TextStyle.lerp(headlineLarge, other.headlineLarge, t)!,
+      headlineMedium: TextStyle.lerp(headlineMedium, other.headlineMedium, t)!,
+      headlineSmall: TextStyle.lerp(headlineSmall, other.headlineSmall, t)!,
       titleLarge: TextStyle.lerp(titleLarge, other.titleLarge, t)!,
       titleMedium: TextStyle.lerp(titleMedium, other.titleMedium, t)!,
       titleSmall: TextStyle.lerp(titleSmall, other.titleSmall, t)!,
@@ -141,8 +135,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
       inputMedium: TextStyle.lerp(inputMedium, other.inputMedium, t)!,
       inputSmall: TextStyle.lerp(inputSmall, other.inputSmall, t)!,
       buttonLarge: TextStyle.lerp(buttonLarge, other.buttonLarge, t)!,
-      buttonMedium:
-          TextStyle.lerp(buttonMedium, other.buttonMedium, t)!,
+      buttonMedium: TextStyle.lerp(buttonMedium, other.buttonMedium, t)!,
       buttonSmall: TextStyle.lerp(buttonSmall, other.buttonSmall, t)!,
     );
   }

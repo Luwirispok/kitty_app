@@ -16,5 +16,4 @@ class DevicePreviewer extends StatelessWidget {
       builder: (context) => child,
     );
   }
-
 }

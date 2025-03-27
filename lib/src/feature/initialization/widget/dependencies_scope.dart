@@ -39,10 +39,7 @@ class DependenciesScope extends InheritedWidget {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(
-      DiagnosticsProperty<DependenciesContainer>(
-        'dependencies',
-        dependencies,
-      ),
+      DiagnosticsProperty<DependenciesContainer>('dependencies', dependencies),
     );
   }
 

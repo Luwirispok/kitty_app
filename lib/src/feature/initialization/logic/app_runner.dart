@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:bloc_concurrency/bloc_concurrency.dart'
-    as bloc_concurrency;
+import 'package:bloc_concurrency/bloc_concurrency.dart' as bloc_concurrency;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kitty_app/src/core/utils/logger.dart';

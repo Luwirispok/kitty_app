@@ -13,9 +13,7 @@ class AppShadows extends ThemeExtension<AppShadows> {
     double t,
   ) {
     if (other is! AppShadows) return this;
-    return AppShadows(
-      shadow_1: BoxShadow.lerp(shadow_1, other.shadow_1, t)!,
-    );
+    return AppShadows(shadow_1: BoxShadow.lerp(shadow_1, other.shadow_1, t)!);
   }
 
   @override

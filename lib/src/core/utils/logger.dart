@@ -4,15 +4,12 @@ import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
-
 Talker get logger => LoggerTalker.l().logger();
 
 class LoggerTalker {
   final Talker _talker = TalkerFlutter.init(
     logger: TalkerLogger(
-      settings: TalkerLoggerSettings(
-        enableColors: false,
-      ),
+      settings: TalkerLoggerSettings(enableColors: false),
       formatter: ColoredLoggerFormatter(),
     ),
     settings: TalkerSettings(
@@ -45,13 +42,11 @@ class LoggerTalker {
   Talker logger() => _talker;
 
   void logZoneError(Object error, StackTrace stackTrace) => _talker.log(
-        'Zone error',
-        logLevel: LogLevel.error,
-        exception: error,
-        stackTrace: stackTrace,
-      );
-
-
+    'Zone error',
+    logLevel: LogLevel.error,
+    exception: error,
+    stackTrace: stackTrace,
+  );
 
   BlocObserver loggerBlocObserver() {
     return TalkerBlocObserver(
@@ -70,21 +65,15 @@ class LoggerTalker {
   }
 
   Interceptor loggerInterceptorDio() {
-    return TalkerDioLogger(
-      talker: _talker,
-    );
+    return TalkerDioLogger(talker: _talker);
   }
 
   TalkerScreen loggerScreen() {
-    return TalkerScreen(
-      talker: _talker,
-    );
+    return TalkerScreen(talker: _talker);
   }
 
   TalkerRouteObserver loggerNavigatorObservers() {
-    return TalkerRouteObserver(
-      _talker,
-    );
+    return TalkerRouteObserver(_talker);
   }
 }
 

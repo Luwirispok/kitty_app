@@ -29,17 +29,13 @@ abstract interface class _AppThemeWithExtensions {
 
 /// The [AppTheme] for the app.
 @immutable
-sealed class AppTheme
-    with Diagnosticable
-    implements _AppThemeWithExtensions {
+sealed class AppTheme with Diagnosticable implements _AppThemeWithExtensions {
   @override
   final ThemeMode themeMode;
 
   AppTheme([this.themeMode = ThemeMode.system]);
 
-  factory AppTheme.withThemeMode([
-    ThemeMode themeMode = ThemeMode.system,
-  ]) {
+  factory AppTheme.withThemeMode([ThemeMode themeMode = ThemeMode.system]) {
     return computeAppTheme(themeMode);
   }
 
@@ -53,27 +49,21 @@ sealed class AppTheme
   /// The [ThemeData] for the dark theme.
   ThemeData get darkTheme => DarkAppTheme().theme;
 
-  static AppTheme computeAppTheme(ThemeMode themeMode) =>
-      switch (themeMode) {
-        ThemeMode.dark => LightAppTheme(),
-        ThemeMode.light => DarkAppTheme(),
-        ThemeMode.system =>
-          PlatformDispatcher.instance.platformBrightness ==
-                  Brightness.dark
-              ? DarkAppTheme()
-              : LightAppTheme(),
-      };
+  static AppTheme computeAppTheme(ThemeMode themeMode) => switch (themeMode) {
+    ThemeMode.dark => LightAppTheme(),
+    ThemeMode.light => DarkAppTheme(),
+    ThemeMode.system =>
+      PlatformDispatcher.instance.platformBrightness == Brightness.dark
+          ? DarkAppTheme()
+          : LightAppTheme(),
+  };
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(EnumProperty<ThemeMode>('type', themeMode));
-    properties.add(
-      DiagnosticsProperty<ThemeData>('lightTheme', lightTheme),
-    );
-    properties.add(
-      DiagnosticsProperty<ThemeData>('darkTheme', darkTheme),
-    );
+    properties.add(DiagnosticsProperty<ThemeData>('lightTheme', lightTheme));
+    properties.add(DiagnosticsProperty<ThemeData>('darkTheme', darkTheme));
   }
 
   @override
@@ -107,31 +97,30 @@ final class LightAppTheme extends AppTheme {
   );
 
   @override
-  AppTypography get textStyleExtensionTheme =>
-      AppTypography.withColor(
-        colorExtensionTheme.textPrimary,
-        displayLarge: AssetsTypography.display,
-        displayMedium: AssetsTypography.display,
-        displaySmall: AssetsTypography.display,
-        headlineLarge: AssetsTypography.headline,
-        headlineMedium: AssetsTypography.headline,
-        headlineSmall: AssetsTypography.headline,
-        titleLarge: AssetsTypography.titleMedium,
-        titleMedium: AssetsTypography.titleMedium,
-        titleSmall: AssetsTypography.titleSmall,
-        bodyLarge: AssetsTypography.body,
-        bodyMedium: AssetsTypography.body,
-        bodySmall: AssetsTypography.body,
-        labelLarge: AssetsTypography.label,
-        labelMedium: AssetsTypography.label,
-        labelSmall: AssetsTypography.label,
-        buttonLarge: AssetsTypography.buttonMedium,
-        buttonMedium: AssetsTypography.buttonMedium,
-        buttonSmall: AssetsTypography.buttonSmall,
-        inputLarge: AssetsTypography.input,
-        inputMedium: AssetsTypography.input,
-        inputSmall: AssetsTypography.input,
-      );
+  AppTypography get textStyleExtensionTheme => AppTypography.withColor(
+    colorExtensionTheme.textPrimary,
+    displayLarge: AssetsTypography.display,
+    displayMedium: AssetsTypography.display,
+    displaySmall: AssetsTypography.display,
+    headlineLarge: AssetsTypography.headline,
+    headlineMedium: AssetsTypography.headline,
+    headlineSmall: AssetsTypography.headline,
+    titleLarge: AssetsTypography.titleMedium,
+    titleMedium: AssetsTypography.titleMedium,
+    titleSmall: AssetsTypography.titleSmall,
+    bodyLarge: AssetsTypography.body,
+    bodyMedium: AssetsTypography.body,
+    bodySmall: AssetsTypography.body,
+    labelLarge: AssetsTypography.label,
+    labelMedium: AssetsTypography.label,
+    labelSmall: AssetsTypography.label,
+    buttonLarge: AssetsTypography.buttonMedium,
+    buttonMedium: AssetsTypography.buttonMedium,
+    buttonSmall: AssetsTypography.buttonSmall,
+    inputLarge: AssetsTypography.input,
+    inputMedium: AssetsTypography.input,
+    inputSmall: AssetsTypography.input,
+  );
 
   @override
   AppColors get colorExtensionTheme => AppColors(
@@ -183,31 +172,30 @@ final class DarkAppTheme extends AppTheme {
   );
 
   @override
-  AppTypography get textStyleExtensionTheme =>
-      AppTypography.withColor(
-        colorExtensionTheme.textPrimary,
-        displayLarge: AssetsTypography.display,
-        displayMedium: AssetsTypography.display,
-        displaySmall: AssetsTypography.display,
-        headlineLarge: AssetsTypography.headline,
-        headlineMedium: AssetsTypography.headline,
-        headlineSmall: AssetsTypography.headline,
-        titleLarge: AssetsTypography.titleMedium,
-        titleMedium: AssetsTypography.titleMedium,
-        titleSmall: AssetsTypography.titleSmall,
-        bodyLarge: AssetsTypography.body,
-        bodyMedium: AssetsTypography.body,
-        bodySmall: AssetsTypography.body,
-        labelLarge: AssetsTypography.label,
-        labelMedium: AssetsTypography.label,
-        labelSmall: AssetsTypography.label,
-        buttonLarge: AssetsTypography.buttonMedium,
-        buttonMedium: AssetsTypography.buttonMedium,
-        buttonSmall: AssetsTypography.buttonSmall,
-        inputLarge: AssetsTypography.input,
-        inputMedium: AssetsTypography.input,
-        inputSmall: AssetsTypography.input,
-      );
+  AppTypography get textStyleExtensionTheme => AppTypography.withColor(
+    colorExtensionTheme.textPrimary,
+    displayLarge: AssetsTypography.display,
+    displayMedium: AssetsTypography.display,
+    displaySmall: AssetsTypography.display,
+    headlineLarge: AssetsTypography.headline,
+    headlineMedium: AssetsTypography.headline,
+    headlineSmall: AssetsTypography.headline,
+    titleLarge: AssetsTypography.titleMedium,
+    titleMedium: AssetsTypography.titleMedium,
+    titleSmall: AssetsTypography.titleSmall,
+    bodyLarge: AssetsTypography.body,
+    bodyMedium: AssetsTypography.body,
+    bodySmall: AssetsTypography.body,
+    labelLarge: AssetsTypography.label,
+    labelMedium: AssetsTypography.label,
+    labelSmall: AssetsTypography.label,
+    buttonLarge: AssetsTypography.buttonMedium,
+    buttonMedium: AssetsTypography.buttonMedium,
+    buttonSmall: AssetsTypography.buttonSmall,
+    inputLarge: AssetsTypography.input,
+    inputMedium: AssetsTypography.input,
+    inputSmall: AssetsTypography.input,
+  );
 
   @override
   AppColors get colorExtensionTheme => AppColors(

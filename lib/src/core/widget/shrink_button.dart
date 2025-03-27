@@ -44,9 +44,7 @@ class _UiShrinkButtonState extends State<UiShrinkButton>
   static final double _defaultOpacityMinValue = 0.90;
   final Curve _defaultScaleCurve = CurveSpring();
   static final Curve _defaultOpacityCurve = Curves.ease;
-  static final Duration _defaultDuration = Duration(
-    milliseconds: 300,
-  );
+  static final Duration _defaultDuration = Duration(milliseconds: 300);
 
   late AnimationController _animationController;
   late Animation<double> _scale;
@@ -57,10 +55,7 @@ class _UiShrinkButtonState extends State<UiShrinkButton>
     super.initState();
 
     _animationController = AnimationController(vsync: this);
-    _scale = Tween<double>(
-      begin: 1.0,
-      end: 1.0,
-    ).animate(_animationController);
+    _scale = Tween<double>(begin: 1.0, end: 1.0).animate(_animationController);
     _opacity = Tween<double>(
       begin: 1.0,
       end: 1.0,
@@ -73,11 +68,7 @@ class _UiShrinkButtonState extends State<UiShrinkButton>
     super.dispose();
   }
 
-  Future<void> anim({
-    double? scale,
-    double? opacity,
-    Duration? duration,
-  }) {
+  Future<void> anim({double? scale, double? opacity, Duration? duration}) {
     _animationController.stop();
     _animationController.duration = duration ?? Duration.zero;
 
@@ -90,10 +81,7 @@ class _UiShrinkButtonState extends State<UiShrinkButton>
         parent: _animationController,
       ),
     );
-    _opacity = Tween<double>(
-      begin: _opacity.value,
-      end: opacity,
-    ).animate(
+    _opacity = Tween<double>(begin: _opacity.value, end: opacity).animate(
       CurvedAnimation(
         curve:
             widget.opacityCurve ??
@@ -117,9 +105,7 @@ class _UiShrinkButtonState extends State<UiShrinkButton>
           ShrinkButtonConfig.opacityMinValue ??
           _defaultOpacityMinValue,
       duration:
-          widget.duration ??
-          ShrinkButtonConfig.duration ??
-          _defaultDuration,
+          widget.duration ?? ShrinkButtonConfig.duration ?? _defaultDuration,
     );
   }
 
@@ -128,9 +114,7 @@ class _UiShrinkButtonState extends State<UiShrinkButton>
       scale: 1.0,
       opacity: 1.0,
       duration:
-          widget.duration ??
-          ShrinkButtonConfig.duration ??
-          _defaultDuration,
+          widget.duration ?? ShrinkButtonConfig.duration ?? _defaultDuration,
     );
   }
 
@@ -187,11 +171,7 @@ class CurveSpring extends Curve {
 }
 
 _sim(double stiffness, double damping) => SpringSimulation(
-  SpringDescription.withDampingRatio(
-    mass: 1,
-    stiffness: stiffness,
-    ratio: 0.7,
-  ),
+  SpringDescription.withDampingRatio(mass: 1, stiffness: stiffness, ratio: 0.7),
   0.0,
   1.0,
   0.0,

@@ -462,8 +462,7 @@ class UiText extends StatelessWidget {
     final palette = Theme.of(context).appColor;
 
     // Get the text style based on the size
-    final style =
-        _styleBuilder?.call(typography) ?? typography.bodyMedium;
+    final style = _styleBuilder?.call(typography) ?? typography.bodyMedium;
 
     return Text(
       data,
