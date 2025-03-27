@@ -18,6 +18,7 @@ class AppShadows extends ThemeExtension<AppShadows> {
     );
   }
 
+  @override
   AppShadows copyWith({BoxShadow? shadow_1}) {
     return AppShadows(shadow_1: shadow_1 ?? this.shadow_1);
   }

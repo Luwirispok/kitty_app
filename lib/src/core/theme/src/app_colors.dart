@@ -84,6 +84,7 @@ final class AppColors extends ThemeExtension<AppColors> {
     required this.textOnAccent,
   });
 
+  @override
   AppColors copyWith({
     Color? red,
     Color? orange,

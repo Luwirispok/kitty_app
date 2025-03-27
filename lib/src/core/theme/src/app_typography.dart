@@ -167,6 +167,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
     );
   }
 
+  @override
   AppTypography copyWith({
     TextStyle? displayLarge,
     TextStyle? displayMedium,
